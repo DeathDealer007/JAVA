@@ -1,0 +1,292 @@
+# PAGE 1 — INTRODUCTION, WORKING & STRUCTURE
+
+### Q1. What is Java?
+
+Java is a **high-level, object-oriented programming language** used to develop secure, robust, and portable software applications. Java source code is written in high-level language and converted into machine-understandable form for execution.
+
+---
+
+### Q2. How does Java work internally?
+
+Java follows a **hybrid model (compiler + interpreter)**.
+
+**Working Flow:**
+
+```
+.java file → javac (compiler) → .class (bytecode) → JVM → Machine Code
+```
+
+* `javac` compiles source code into **bytecode**
+* JVM executes bytecode using **Interpreter + JIT compiler**
+
+---
+
+### Q3. What is JVM, JRE, and JDK?
+
+* **JVM (Java Virtual Machine)**
+  Executes bytecode, provides platform independence, memory management, security, and performance optimization.
+
+* **JRE (Java Runtime Environment)**
+  Contains JVM + core libraries required to run Java programs.
+
+* **JDK (Java Development Kit)**
+  Contains JRE + development tools like compiler (`javac`), debugger, etc.
+
+📌 **Relation:**
+
+```
+JDK → JRE → JVM
+```
+
+---
+
+### Q4. How does Java achieve platform independence?
+
+Java programs are compiled into **platform-independent bytecode**.
+Each OS has its own JVM which converts bytecode into machine code.
+
+➡️ Hence: **Write Once, Run Anywhere (WORA)**
+
+---
+
+### Q5. What is the basic structure of a Java program?
+
+```java
+class ClassName {
+    public static void main(String[] args) {
+        // program statements
+    }
+}
+```
+
+* `class` → blueprint
+* `main()` → entry point
+* `public static void main` → required for JVM execution
+
+---
+
+# PAGE 2 — TOKENS, DATA TYPES & VARIABLES
+
+### Q6. What are tokens in Java?
+
+Tokens are the **smallest units** of a Java program.
+
+---
+
+### Q7. Types of Tokens in Java
+
+1. **Keywords**
+   Reserved words (e.g., `class`, `static`, `int`)
+
+2. **Identifiers**
+   Names given by programmer (class, method, variable names)
+
+3. **Literals**
+   Fixed values:
+
+   * Integer: `10`
+   * Float: `10.5f`
+   * Character: `'a'` (single character)
+   * String: `"Java"` (group of characters)
+   * Boolean: `true`, `false`
+
+4. **Separators**
+
+   * `{}` → blocks
+   * `()` → methods/conditions
+   * `;` → end of statement
+   * `.` → reference
+   * `,` → separates variables
+
+---
+
+### Q8. What are data types in Java?
+
+Data types specify **what type of data a variable can store**.
+
+---
+
+### Q9. Types of Data Types
+
+#### Primitive (Inbuilt):
+
+* `byte`, `short`, `int`, `long`
+* `float`, `double`
+* `char`
+* `boolean`
+
+#### Non-Primitive (User-defined):
+
+* `String`
+* Arrays
+* Classes
+
+---
+
+### Q10. What are variables?
+
+Variables are **memory locations** used to store data.
+
+**Declaration & Initialization:**
+
+```java
+datatype variable = value;
+```
+
+---
+
+### Q11. Types of Variables
+
+* **Local Variable** → declared inside methods
+* **Static Variable** → declared using `static`, shared by all objects
+* **Global (Class-level) Variable** → accessible throughout the class
+
+---
+
+# PAGE 3 — OPERATORS, COMPILER VS INTERPRETER
+
+### Q12. What are operators in Java?
+
+Operators are symbols used to **perform operations on operands**.
+
+---
+
+### Q13. Unary Operators
+
+Operate on **one operand**.
+
+Examples:
+
+* `++`, `--`
+* `!`
+* `new`
+
+```java
+int a = 5;
+a++;   // post-increment
+++a;   // pre-increment
+```
+
+---
+
+### Q14. Binary Operators
+
+Operate on **two operands**.
+
+Types:
+
+* Arithmetic: `+ - * / %`
+* Relational: `> < == !=`
+* Logical: `&& ||`
+
+---
+
+### Q15. Ternary Operator
+
+Only operator with **three operands**.
+
+```java
+condition ? value1 : value2;
+```
+
+---
+
+### Q16. Difference between Compiler and Interpreter
+
+| Feature       | Compiler          | Interpreter   |
+| ------------- | ----------------- | ------------- |
+| Translation   | Whole program     | Line by line  |
+| Speed         | Faster            | Slower        |
+| Error display | After compilation | One at a time |
+| Output file   | Yes               | No            |
+
+📌 Java uses **both**:
+
+* `javac` → compiler
+* JVM → interpreter + JIT
+
+---
+
+### Q17. Is an interpreter a compiler?
+
+❌ No.
+Both are translators but work differently.
+
+---
+
+# PAGE 4 — FEATURES: SECURITY, ROBUSTNESS, PERFORMANCE, CAREER
+
+### Q18. How does Java provide security at runtime?
+
+Java provides runtime security through:
+
+* **Class Loader**
+* **Bytecode Verifier**
+* **Security Manager**
+* **No pointer access**
+* **Access control**
+* **Automatic garbage collection**
+
+---
+
+### Q19. What makes Java robust?
+
+* Strong memory management
+* Exception handling
+* Runtime checks
+* No pointer manipulation
+* Bytecode verification
+
+---
+
+### Q20. How does Java achieve high performance?
+
+* **JIT compiler**
+* JVM HotSpot optimization
+* Efficient garbage collection
+* Multithreading
+* Optimized libraries
+
+---
+
+### Q21. What is portability in Java?
+
+Portability means a Java program can run on **different platforms without modification**, due to JVM and bytecode.
+
+---
+
+### Q22. Why is Java considered simple?
+
+* No pointers
+* Automatic memory management
+* Simple syntax
+* No complex features (operator overloading, multiple inheritance)
+* Rich APIs
+
+---
+
+### Q23. How does Java help in software development?
+
+Java helps by providing:
+
+* Security
+* Portability
+* Platform independence
+* Scalability
+* Rich APIs and libraries
+
+---
+
+### Q24. Why does Java have strong industry and job opportunities?
+
+* Enterprise dominance
+* Backend & microservices
+* Android development
+* Cloud & big data integration
+* Long-term industry support
+
+---
+
+## 🧠 ONE-LINE MASTER REVISION
+
+> Java is a secure, robust, portable, high-performance, object-oriented language that uses JVM to achieve platform independence and is widely used in industry.

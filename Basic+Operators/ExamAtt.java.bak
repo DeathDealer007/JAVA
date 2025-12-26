@@ -1,0 +1,12 @@
+class ExamAtt 
+{
+	public static void main(String[] args) 
+	{
+		int att = 71;
+		String medic = "yes";
+		String fees = "not paid";
+		String Res = (att>75 || medic == "yes")?"Eligible":(medic == "yes" fees == "paid")?"Eligible":"Not eligible";
+		
+		System.out.println(Res);
+	}
+}

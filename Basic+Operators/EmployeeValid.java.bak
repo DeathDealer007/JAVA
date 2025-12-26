@@ -1,0 +1,11 @@
+class EmployeeValid 
+{
+	public static void main(String[] args) 
+	{
+		Boolean id = true;
+		Boolean p_employee = true;
+		Boolean c_employee = false;
+		String Res = (id == true || p_employee == true || c_employee == true)?"ValidEntry":"Not Allowed";
+		System.out.println(Res);
+	}
+}

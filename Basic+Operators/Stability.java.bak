@@ -1,0 +1,11 @@
+class Stability 
+{
+	public static void main(String[] args) 
+	{
+		int usage = 78;
+		int memory = 39;
+		Boolean u_maintence = false;
+		String res = (u_maintence == true)?"Unstable":(usage>85 || memory > 90)?"Unstable":"Stable";
+		System.out.println(res);
+	}
+}

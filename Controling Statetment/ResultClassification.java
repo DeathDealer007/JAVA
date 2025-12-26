@@ -1,0 +1,24 @@
+import java.util.*;
+class ResultClassification 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		int marks = sc.nextInt();
+		if(marks>40){
+			System.out.print("Pass");
+			
+			if(marks >=80){
+				System.out.print(" with A");
+			}
+			else if (marks < 80 && marks >=60)
+			{
+				System.out.println(" with B");
+			}
+		}
+		else{
+			System.out.println("Failed");
+		}
+		
+	}
+}

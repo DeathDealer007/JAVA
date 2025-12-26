@@ -1,0 +1,34 @@
+import java.util.*;
+
+class ResultAnalyser {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter out of 100 Marks of Physics: ");
+        int m1 = sc.nextInt();
+
+        System.out.println("Enter out of 100 Marks of Chemistry: ");
+        int m2 = sc.nextInt();
+
+        System.out.println("Enter out of 100 Marks of Maths : ");
+        int m3 = sc.nextInt();
+
+        char grade = method(m1, m2, m3);
+
+        if (grade == 'a') {
+            System.out.println("Student is eligible with grade: " + grade);
+        } else {
+            System.out.println("Student is not eligible with grade: " + grade);
+        }
+    }
+
+    public static char method(int m1, int m2, int m3) {
+        int agg = (m1 + m2 + m3) / 3;   
+
+        char grade =
+            (agg >= 60 && agg < 80) ? 'b' :
+            (agg >= 80 && agg <= 100) ? 'a' : 'c';
+
+        return grade;
+    }
+}

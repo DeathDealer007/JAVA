@@ -1,0 +1,28 @@
+import java.util.*;
+class Transaction 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Balance: ");
+		int balance = sc.nextInt();
+		System.out.println("Withdraw Amount");
+		int w_amount = sc.nextInt();
+		String result  = method(balance,w_amount);
+		System.out.println(result);
+	}
+	public static String method(int balance, int w_amount){
+		if(balance>0 && w_amount>0){
+			if(balance<w_amount){
+			System.out.println("Insufficient");
+		}
+			else {
+			System.out.println("Can withdraw"+ "new balance is"+ (balance - w_amount));
+			}
+		}
+		else{
+		System.out.println("Invalid Input");
+		}
+		return "Transaction completed";
+	}
+}

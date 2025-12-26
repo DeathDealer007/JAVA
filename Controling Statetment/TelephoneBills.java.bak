@@ -1,0 +1,28 @@
+import java.util.*;
+class TelephoneBills 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Number of calls: ");
+		int calls = sc.nextInt();
+		double bill = 200;
+		if(calls<=100){
+			System.out.println("Bill is "+ bill);
+		}
+		else if(calls>100 && calls<=150){
+			bill = bill + (calls-100)*0.60;
+			System.out.println("Bill is "+ bill);
+		}
+		else if(calls>150 && calls<=200){
+			bill = bill + (calls-100)*0.60;
+			bill = bill + (calls-150)*0.50;
+			System.out.println("Bill is "+ bill);
+		}
+		else{
+			bill = bill + (calls-200)*0.40;
+			System.out.println("Bill is "+ bill);
+			}
+		System.out.println("Hello World!");
+	}
+}

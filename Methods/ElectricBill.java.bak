@@ -1,0 +1,25 @@
+import java.util.*;
+class ElectricBill 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc  = new Scanner(System.in);
+		System.out.print("Enter Units consumed: ");
+		int unit = sc.nextInt();
+		System.out.print("Select Slab: slab1(12rs) as slab1 or slab2(14rs) as slab2: ");
+		String slab = sc.next();
+		String billamount = method(unit, slab);
+		System.out.print(billamount);
+	}
+	public static String method(int unit, String slab){
+		if(slab == "slab1"){
+			int amt = unit * 12;
+			System.out.println("Amount for your slab is: "+amt);
+		}
+		else{
+			int amt = unit * 14;                       
+			System.out.println("Amount for your slab is: "+ amt);
+		}
+		return "Thank you";
+	}
+}

@@ -1,0 +1,127 @@
+1. RELATIONAL OPERATORS & BUSINESS RULE VALIDATION – NOTES
+
+Stock Availability
+Rule: A product can be added to the cart only if stock is more than zero.
+Relational Operator Used: >
+Condition:
+stock > 0
+
+Explanation:
+Using > ensures only positive stock values are allowed. Checking != 0 is unsafe because it allows negative stock values, which are invalid.
+
+2. Quantity Limit per Order
+Rule: A customer can purchase a maximum of 5 units of a product.
+Relational Operator Used: <=
+Condition:
+quantity <= 5
+
+Explanation:
+This allows quantities from 1 to 5 and prevents purchasing more than 5 units. Using < 5 would wrongly reject quantity 5.
+
+3. Payment Verification
+Rule: Order is confirmed only if paid amount exactly matches the order amount.
+Relational Operator Used: ==
+Condition:
+paid_amount == order_amount
+
+Issue with Floating-Point Values:
+Floating-point numbers may have precision errors. Two values that appear equal may not be exactly equal in memory, which can cause valid payments to be rejected.
+
+4. Fraud Detection Check
+Rule: An order is flagged if the order amount is greater than the average order value.
+Relational Operator Used: >
+Condition:
+order_amount > average_order_value
+
+Explanation:
+This condition alone does not guarantee fraud detection because genuine customers can also place high-value orders. Fraud detection requires multiple checks.
+
+Return Policy Validation
+Rule: A product can be returned only within 7 days of delivery.
+Relational Operator Used: <=
+Condition:
+days_since_delivery <= 7
+
+5. Boundary Issue:
+Using < 7 rejects returns on the 7th day. Using >= 7 allows late returns. This is called an off-by-one error.
+
+Wishlist Limit
+Rule: A user can add items only until the wishlist contains fewer than 100 products.
+Relational Operator Used: <
+Condition:
+wishlist_count < 100
+
+Explanation:
+This blocks adding items when the count reaches 100. Using <= 100 would allow 101 items, violating the rule.
+
+6. Free Delivery Rule
+Rule: Free delivery is applicable when cart value is 499 or more.
+Relational Operator Used: >=
+Condition:
+cart_value >= 499
+
+Boundary Case:
+If cart value is exactly 499, free delivery is applied. Using > would wrongly reject 499.
+
+Discount Eligibility
+Rule: Discount is applied only if cart value is above 2000.
+Relational Operator Used: >
+Condition:
+cart_value > 2000
+
+7. Business Logic Issue:
+Using >= 2000 would apply discount at exactly 2000, which violates the rule “above 2000”.
+
+Coupon Expiry Validation
+Rule: Coupon is valid until the expiry date (inclusive).
+Relational Operator Used: <=
+Condition:
+current_date <= expiry_date
+
+Boundary Issue:
+Using < rejects the coupon on the expiry date. Using > allows expired coupons.
+
+8. Loan Tenure Meaning
+Loan tenure is the total time period for which the loan is taken.
+
+Tenure Usage:
+Simple Interest – Years
+EMI Calculation – Months
+
+Example:
+5 years = 60 months (for EMI)
+
+Loan Calculation (Simple Interest)
+Given:
+Principal (P) = 75,00,000
+Rate (R) = 19%
+Time (T) = 5 years
+
+Formula:
+SI = (P × R × T) / 100
+
+Calculation:
+SI = 71,25,000
+Total Amount Payable = 1,46,25,000
+
+
+
+10. Java Program – Character Check Using Ternary Operator
+
+import java.util.Scanner;
+
+public class CharacterCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        char ch = sc.next().charAt(0);
+
+        String result =
+            (ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z') ?
+                "Alphabet" :
+            (ch >= '0' && ch <= '9') ?
+                "Number" :
+                "Special Character";
+
+        System.out.println(result);
+    }
+}

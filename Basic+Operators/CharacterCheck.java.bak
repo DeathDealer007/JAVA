@@ -1,0 +1,18 @@
+public class CharacterCheck 
+{
+    public static void main(String[] args) 
+    {
+        char ch = 'a';
+
+        String result =
+            (ch >= 'A' && ch <= 'Z') ?
+                "Uppercase Alphabet" :
+            (ch >= 'a' && ch <= 'z') ?
+                "Lowercase Alphabet" :
+            (ch >= '0' && ch <= '9') ?
+                "Number" :
+                "Special Character";
+
+        System.out.println(result);
+    }
+}

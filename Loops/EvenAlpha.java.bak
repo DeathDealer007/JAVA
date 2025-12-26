@@ -1,0 +1,10 @@
+class EvenAlpha 
+{
+	public static void main(String[] args) 
+	{	
+		for(char i='b';i<='z';i=+2){
+			System.out.println(i);
+		}
+		System.out.println("Hello World!");
+	}
+}

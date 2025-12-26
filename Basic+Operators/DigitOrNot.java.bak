@@ -1,0 +1,9 @@
+class DigitOrNot 
+{
+	public static void main(String[] args) 
+	{
+		int a = 1;
+		Boolean res = (48<= a <=58)?true:false;
+		System.out.println("IsDigit: "+res);
+	}
+}

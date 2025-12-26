@@ -1,0 +1,10 @@
+class LoginValid 
+{
+	public static void main(String[] args) 
+	{
+		String user = "akit";
+		String pass = "ankit@123";
+		String Res = (user != "" && pass !="")?"Not Valid":"Active";
+		System.out.println(Res);
+	}
+}

@@ -1,0 +1,37 @@
+import java.util.*;
+class LoanEligible 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Enter the your income: ");
+		int income = sc.nextInt();
+		System.out.print("Enter the loan amount: ");
+		int loan = sc.nextInt();
+		System.out.print("Enter the credit score: ");
+		int credit = sc.nextInt();
+		
+		String res = checker(income, loan, credit);
+		System.out.print("The user is "+ res);
+	}
+	public static String checker(int income, int loan, int credit){
+		if (income<10000)
+		{
+			return "not eligible";
+		}
+		else{
+			if(loan > (20 * income)){
+				return "not eligible";
+			}
+			else{
+				if(credit < 0){
+					return "not eligible";
+				}
+				else{
+					return "eligible";
+				}
+			}
+		}
+	}
+}

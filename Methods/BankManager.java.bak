@@ -1,0 +1,74 @@
+import java.util.*;
+
+class BankManager {
+	
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int choice;
+		System.out.println("Account holder name: ");
+		String name = sc.next();
+		System.out.println("Account number: ");
+		long acc_num = sc.nextLong();
+		System.out.println("IFSC: ");
+		String ifsc = sc.next();
+		System.out.println("Balance: ");
+		int balance = sc.nextInt();
+        do {
+            System.out.println("\n1: Withdraw\n2: Deposit\n3: Display Balance\n4: Exit");
+            choice = sc.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter amount to withdraw: ");
+                    int wAmount = sc.nextInt();
+                    Withdraw(wAmount);
+                    break;
+
+                case 2:
+                    System.out.print("Enter amount to deposit: ");
+                    int dAmount = sc.nextInt();
+                    Deposit(dAmount);
+                    break;
+
+                case 3:
+                    Display();
+                    break;
+
+                case 4:
+                    System.out.println("Thank you! Exit successful.");
+                    break;
+
+                default:
+                    System.out.println("Invalid choice");
+            }
+        } while (choice != 4);
+    }
+
+    public static void Withdraw(int amount) {
+        if (amount <= 0) {
+            System.out.println("Invalid amount");
+        } else if (amount > balance) {
+            System.out.println("Insufficient balance");
+        } else {
+            balance = balance - amount;
+            System.out.println(amount + " withdrawn successfully");
+        }
+    }
+
+    public static void Deposit(int amount) {
+        if (amount <= 0) {
+            System.out.println("Invalid amount");
+        } else {
+            balance = balance + amount;
+            System.out.println(amount + " deposited successfully");
+        }
+    }
+
+    public static void Display() {
+		
+        System.out.println("Current Balance: " + balance);
+		System.out.println("Name of Account holder: "+ name);
+		System.out.println("Account number: "+ acc_num);
+		System.out.println("IFSC: "+ifsc);
+    }
+}

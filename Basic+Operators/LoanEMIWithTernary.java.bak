@@ -1,0 +1,20 @@
+public class LoanEMIWithTernary {
+    public static void main(String[] args) {
+
+        double principal = 7500000;
+        double annualRate = 19;
+        int tenureYears = 5;
+
+        double monthlyRate = annualRate / (12 * 100);
+        int tenureMonths = tenureYears * 12;
+
+        double emi = (tenureYears > 0) ?
+                (principal * monthlyRate * Math.pow(1 + monthlyRate, tenureMonths)) /
+                (Math.pow(1 + monthlyRate, tenureMonths) - 1)
+                : 0;
+
+        System.out.println(
+            (emi > 0) ? "Monthly EMI: " + emi : "Invalid Loan Tenure"
+        );
+    }
+}

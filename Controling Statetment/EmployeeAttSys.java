@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+class EmployeeAttSys 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		int hour = sc.nextInt();
+		if(hour >= 8){
+			System.out.println("Present");
+		}
+		else if (hour<8 && hour>4)
+		{
+			System.out.println("Halfday");
+			
+		}
+		else{
+		
+			System.out.println("Absent");
+		}
+	}
+}

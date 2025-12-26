@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+class ShoppingDiscount {
+
+    static double calculatePayableAmount(double amount, char customerType) {
+
+        if (customerType == 'R') {
+            amount = amount - (amount * 10 / 100);
+        }
+        else if (customerType == 'P') {
+            amount = amount - (amount * 20 / 100);
+        }
+        else {
+            System.out.println("Invalid Customer Type");
+        }
+
+        return amount;
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Purchase Amount: ");
+        double amount = sc.nextDouble();
+
+        System.out.print("Enter Customer Type (R / P): ");
+        char type = sc.next().charAt(0);
+
+        double finalAmount = calculatePayableAmount(amount, type);
+
+        System.out.println("Final Payable Amount: " + finalAmount);
+
+        sc.close();
+    }
+}
+
