@@ -1,0 +1,91 @@
+Exception:
+ Exception is a problem that occurs during the execution of a program(RunTime) due to abnormal situation .
+when exception occurs, the exception of the program will stop abruptly(Unexpected stop).
+
+Note :
+1)For Every Exception , there is a statement which is responsible.
+2)That statement throws exception only during the abnormal situation.
+
+In Throwable hierarchy which classes are considered as Unchecked Exception?
+  Ans: Error class and its Sub classes, runtime exception class and its Sub classes are all considered as unchecked exception.
+
+What about Throwable and Exception Class?
+Ans: Throwable and exception class are partially checked  and Partially unchecked.
+
+Throwable:
+Throwable class is defined in java. lang package;
+
+Checked Exception:
+The compiler aware exception is known as checked Exception. The compiler knows the statement responsible for the exception.
+Therefore, it forces the programmer to either handle or declare the exception , if not done we get unreported exception compile time error.
+
+
+Unchecked Exception:
+The compiler unaware exception is known as unchecked Exception. The compiler doesn't knows the statement responsible for the exception.
+Hence, it does not  force the program  either to handle or declare the exception.
+
+
+
+Exception Handling :
+Exception handling is a mechanism used in java, to continue the normal flow of execution when exception is occurred in the runtime.
+
+How To Handle The Exception ?
+In java, we can handle the exception with the help of try-catch block.
+
+syntax :
+
+     try
+   {
+     statements ;
+   }
+    catch( declare one variable of Throwable type )
+   {
+    statements ;
+   }
+
+try :
+1.the statements which are responsible for the exception should be written inside
+try block.
+
+2.When the exception occurs,
+
+1. execution of try block is stopped.
+2. Throwable type object is created.
+3. the address of throwable type object created, it is passed to catch
+block.
+
+catch:
+
+catch block is used to catch the Throwable type reference thrown by the try block.
+
+1.if it catches, we say exception is handled. Statements inside catch block get executed and normal flow of the program will continue.
+
+2.if it does not catch, we say exception is not handled, catch block is not executed and program is terminated.
+
+When does catch block catch the exception ?
+Ans: 
+If the variable declared in catch is either same type or super class type of the exception object thrown try block, we say it is caught.
+
+finally block:
+
+The finally keyword is used to execute code(used with exception try and catch statements)no matter if there is an exception or not.
+
+Exception Object Propagation:
+
+The Movement of exception Object from called method to the calling method when the exception is not handled is known as Exception object Propagation.
+
+throw keyword:
+The throw keyword in Java is used to explicitly throw an exception from a method or any block of code.
+
+throws keyword:
+It is a Keyword ,which is used to declare an exception to be thrown to the caller.
+It should be used in in Method declaration statement. 
+
+syntax:
+[Modifier] returntype methodname([formal]) throws exception
+{
+
+}
+
+Note:
+If a method declares an exception using throws , then the caller of the method must handle or declare the exception . If not we get compile time error.
