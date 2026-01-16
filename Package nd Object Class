@@ -1,0 +1,210 @@
+PACKAGES
+
+Package is nothing but a folder , which is collection of similar java resources.
+A java package is a group of similar types of classes, interfaces and sub-packages.
+Package in java can be categorized in two form, built-in package and user-defined package.
+There are many built-in packages such as java, lang, awt, javax, swing, net, io, util, sql etc.
+
+Advantage of Java Package:
+1.Java package is used to categorize the classes and interfaces so that they can be easily maintained.
+2.Java package provides access protection.
+3.Java package removes naming collision.
+4.Better maintenance of Project.
+5.We can achieve Modularity.
+6.Accessibility and search becomes easy and fast.
+
+Note: a package can have sub package or directly java programs.
+
+
+How to access package from another package?
+There are three ways to access the package from outside the package.
+1. import package.*;
+2. import package.classname;
+3. fully qualified name.
+
+1) Using packagename.*
+If you use package.* then all the classes and interfaces of this package will be accessible but not
+sub packages.
+The import keyword is used to make the classes and interface of another package accessible to the
+current package.
+Example of package that import the packagename.*
+
+2) Using packagename.classname
+If you import package.classname then only declared class of this package will be accessible.
+Example of package by import package.classname
+
+3) Using fully qualified name
+If you use fully qualified name then only declared class of this package will be accessible. Now
+there is no need to import. But you need to use fully qualified name every time when you are
+accessing the class or interface.
+It is generally used when two packages have same class name e.g. java.util and java.sql packages
+contain Date class.
+Example of package by import fully qualified name
+
+Access Modifier:
+1. private: The access level of a private modifier is only within the class. It cannot be accessed
+from outside the class.
+2. Default: The access level of a default modifier is only within the package. It cannot be
+accessed from outside the package. If you do not specify any access level, it will be the
+default.
+3. Protected: The access level of a protected modifier is within the package and outside the
+package through child class. If you do not make the child class, it cannot be accessed from
+outside the package.
+4. Public: The access level of a public modifier is everywhere. It can be accessed from within
+the class, outside the class, within the package and outside the package.
+ 
+Inbuilt package:
+
+In java library thousands of inbuilt classes are present which are modularized into different
+packages namely:
+* java.lang
+* java.util
+* java.io
+* java.math
+* java.awt
+* java.sql
+classes present in java.lang package need not to be imported . There are automatically available.
+
+Object Class:
+
+*Object class is defined in java. lang package.
+*Object class is the super most class for all the classes in java.
+*In Object class there are 11 non static methods.
+
+toString():
+*toString() returns String type value.
+*toString() implementation of Object class returns reference of an Object in String format.
+*toString() of Object class is called implicitly on every time, When a programmer tries to print the reference of an Object.
+
+Purpose of toString():
+*We Override toString() to print the state of an Object instead of reference of the Object Address. 
+
+
+
+In Object getClass():
+*This method is used to fetch the fully qualified classname of an Object.
+*This method is final and cannot be Overridden.
+
+
+equals(Object obj):
+
+public boolean equals(Object o ) :
+➢ the return type of equals method is boolean.
+➢ For equals method we can pass reference of any object.
+The java.lang.Object class implementation of equals method is used to compare the reference of two objects. 
+(it behaves exactly like == operator)
+
+
+Purpose: We override equals method to compare the state of two objects instead
+of comparing reference of two objects.
+
+
+hashCode():
+➢ hashCode() returns integer number
+➢ java.lang.Object class implementation of hashCode() returns a unique integer
+number for every object created.
+➢ The unique integer number is generated based on the reference of the object 
+
+
+
+
+ARRAY:
+An array is a contiguous block of memory that stores multiple values.
+
+CHARACTERISTIC OF AN ARRAY:
+The size of an array must be defined at the time of declaration.
+Once declared, the size of an array can’t be modified.
+Hence array is known as fixed size.
+In an array, we can access the elements with the help of an index or subscript. It is an integer number that starts from 0 and ends at the length of the array-1.
+In an array, we can store only homogeneous type values. It is also known as the homogeneous collection of an object.
+NOTE:
+	In java, the array is an object
+
+ to declare an array:
+	datatype[] variable; (or) datatype variable[];
+EXAMPLE:
+	   int a[]    --- single dimensional array reference variable of int type
+
+Syntax to instantiate an array:
+	new datatype[ size ];
+
+NOTE:
+	Once the array is instantiated it is assigned with a default value.
+
+ADDING ELEMENTS:
+	We can add an element to an array with the help of an array index.
+Syntax to add an element into an array:
+
+	array_ref_variable[ index ] = value;
+EXAMPLE:
+	int[] arr = new int[5]; //declaration
+	arr[0] = 2;
+	arr[1] = 4;
+	arr[2] = 7;
+	arr[3] = 0;
+	arr[4] = 3;
+ox1-------------------------------->arr
+2
+4
+7
+0
+3
+
+
+ACCESSING ELEMENTS:
+	We can access an element from an array with the help of an array reference variable and index.
+Syntax to access an elements from an array :
+	array_ref_variable[ index ] ;
+EXAMPLE :
+	System.out.println(arr[0]); // 2
+	System.out.println(arr[2]); // 7
+	System.out.println(arr[4]); // 3
+	System.out.println(arr[5]); //ArrayIndexOutOfBoundsException
+
+Declaring, Instantiating, Initializing An Array In A Single Line:
+We can also declare, instantiate and initialize an array by using a single line.
+Syntax:
+	datatype[] arr_ref_var = { element1, element2 , element3, etc... };
+EXAMPLE :
+int arr[] = { 1, 2, 3, 4, 5 }; 
+
+
+
+String Class:
+*It is a final class defined in java.lang package.
+*It is Immutable class.
+*It is thread Safe .
+*It contains some Overload constructors:
+String(),String(String literals), String(StringBuffer sb),String(StringBuilder),String(char[] ch)...
+*Inside the String class toString(), hashCode(), equals(Object o) are Overrided.
+*There are two Ways We can create String objects
+1)By literals
+  
+2)By newOperator
+*If we create the object by literals the object will be created inside String constantpool area, before creating the objects the JVM wil checks, this object value is already present inside String Constant Pool Area , if yes the JVM will not creates new Object , the reference variable will points the Same Object.
+*If we create the Object Using newOperator the object will be created inside the Heap Area. 
+
+Why String class is Immutable?
+In String ConstantPool Area a single Object can be pointed by Multiple reference variables if we do the Changes with respect to one reference Variable it will be reflected to all the reference Variable hence they made String class as Immutable.
+
+StringBuffer Class:
+
+*Java StringBuffer class is used to create mutable (Modifiable) String.
+*The StringBuffer class in java is same as String class except it is mutable .It can be Changed.
+
+Note :
+String Buffer class is thread safe ,Multiple threads cannot access it simultaneously. So it is Safe and will result in an Order.
+
+String Buffer inbuilt Methods:
+
+1)append(String s)
+2)insert(int OffSet, String s)
+3)replace(int startIndex , int endIndex , String s)
+4)delete(int startIndex , int endIndex)
+5)reverse()
+6)capacity()
+7)ensureCapacity(int minCapacity)
+8)charAt(int index)
+9)length()
+10)substring(int beginIndex)
+11)substring(int beginIndex , int endIndex)
